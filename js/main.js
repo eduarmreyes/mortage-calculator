@@ -44,11 +44,18 @@
 
 	calculator.addEventListener('submit', function(e) {
 		e.preventDefault();
-		validate_form();
+		if (!validate_form()) {
+			console.log('form is not valid');
+			return false;
+		}
+
+		// calculate results
+		console.log('calculating results');
 	});
 
 	var validate_form = function() {
 		// validate form
+		var isFormClear = true;
 		var loan_amount = new Input('loan-amount');
 		var annual_tax = new Input('annual-tax');
 		var annual_insurance = new Input('annual-insurance');
@@ -59,13 +66,18 @@
 		annual_insurance.cleanErrorMessage();
 
 		if (loan_amount.isEmpty()) {
+			isFormClear = false;
 			loan_amount.addErrorMessage();
 		}
 		if (annual_tax.isEmpty()) {
+			isFormClear = false;
 			annual_tax.addErrorMessage();
 		}
 		if (annual_insurance.isEmpty()) {
+			isFormClear = false;
 			annual_insurance.addErrorMessage();
 		}
+
+		return isFormClear;
 	};
 })();
