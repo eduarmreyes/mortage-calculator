@@ -21,45 +21,59 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div class="mortage-title--wrapper">
-	    <h1 class="mortage-title">Mortage Calculator</h1>
+	    <h1 class="mortage-title m-top-none">Mortage Calculator</h1>
 	    <hr class="mortage-separator">
     </div>
-    <div class="d-flex justify-content-center calculator-wrapper">
+    <div class="calculator-wrapper">
     	<div class="calculator--form">
     		<h3 class="calculator--title">Change values to calculate your results</h3>
     		<hr class="mortage-separator">
-    		<form action="/not-yet" type="post">
-    			<label for="years-of-mortage">Years of mortage</label>
-    			<!-- nice looking slider, created from zero -->
-    			<label for="rate-of-interest">Rate of interest (%)</label>
-    			<!-- nice looking slider, created from zero -->
-    			<label for="loan-amount">Loan amount</label>
-    			<input type="text" id="loan-amount" name="loan-amount" class="f-width">
-    			<label for="annual-tax">Annual Tax</label>
-    			<input type="text" id="annual-tax" name="annual-tax" class="h-width">
-    			<label for="annual-insurance">Annual insurance</label>
-    			<input type="text" id="annual-insurance" name="annual-insurance" class="h-width">
-    			<button class="btn btn-primary f-width">
+    		<form id="calculator" action="/not-yet" type="post">
+          <div class="form--wrapper">
+      			<label class="form--label" for="years-of-mortage">Years of mortage</label>
+      			<!-- nice looking slider, created from zero -->
+            <input class="form--range" type="range" name="years-of-mortage">
+          </div>
+          <div class="form--wrapper">
+            <label class="form--label" for="rate-of-interest">Rate of interest (%)</label>
+            <!-- nice looking slider, created from zero -->
+            <input class="form--range" type="range" name="rate-of-interest">
+          </div>
+          <div class="form--wrapper">
+      			<label class="form--label" for="loan-amount">Loan amount</label>
+      			<input type="text" id="loan-amount" name="loan-amount" class="form--input f-width">
+          </div>
+          <div class="d-flex align-items-between form--wrapper">
+            <div class="form--p-right">
+        			<label class="form--label" for="annual-tax">Annual Tax</label>
+        			<input type="text" id="annual-tax" name="annual-tax" class="form--input">
+            </div>
+            <div class="form--p-left">
+              <label class="form--label" for="annual-insurance">Annual insurance</label>
+              <input type="text" id="annual-insurance" name="annual-insurance" class="form--input">
+            </div>
+          </div>
+    			<button class="form--btn btn btn-primary f-width">
     				Calculate
     			</button>
     		</form>
     	</div>
   		<div class="results">
-  			<h2>Your results</h2>
-  			<label for="n-a">Principle & Interest</label>
+  			<h2 class="results--title m-top-none">Your results</h2>
+  			<label class="" for="n-a">Principle & Interest</label>
   			<p class="muted">
   				$ --
   			</p>
-  			<label for="n-a">Tax</label>
+  			<label class="" for="n-a">Tax</label>
   			<p class="muted">
   				$ --
   			</p>
-  			<label for="n-a">Insurance</label>
+  			<label class="" for="n-a">Insurance</label>
   			<p class="muted">
   				$ --
   			</p>
   			<hr>
-  			<label for="n-a">Total Monthly Payment</label>
+  			<label class="" for="n-a">Total Monthly Payment</label>
   			<p class="muted">
   				$ --
   			</p>
