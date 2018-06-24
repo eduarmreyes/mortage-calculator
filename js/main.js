@@ -29,12 +29,16 @@
 		var empty_tag = document.createElement('p');
 		// add class to show error
 		empty_tag.classList.add(this.errorMessageClass);
+		empty_tag.classList.add('animated');
+		empty_tag.classList.add('shake');
 		// add text to created element
 		var empty_message = document.createTextNode(this.errorMessage);
 		empty_tag.appendChild(empty_message);
 
 		var the_input = document.getElementById(this.id);
 		the_input.classList.add(this.inputErrorClass);
+		the_input.classList.add('animated');
+		the_input.classList.add('shake');
 
 		the_input.parentNode.appendChild(empty_tag);
 	};
@@ -52,7 +56,9 @@
 		// calculate results
 		console.log('calculating results');
 		var calculator_results = document.getElementById('calculator-results');
-		calculator_results.classList.add('results--show')
+		calculator_results.classList.add('results--show');
+		calculator_results.classList.add('animated');
+		calculator_results.classList.add('slideInDown');
 	});
 
 	var validate_form = function() {
