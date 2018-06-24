@@ -59,25 +59,32 @@
     			</button>
     		</form>
     	</div>
-  		<div class="results">
+  		<div class="results" id="calculator-results">
   			<h2 class="results--title m-top-none">Your results</h2>
-  			<label class="" for="n-a">Principle & Interest</label>
-  			<p class="muted">
-  				$ --
-  			</p>
-  			<label class="" for="n-a">Tax</label>
-  			<p class="muted">
-  				$ --
-  			</p>
-  			<label class="" for="n-a">Insurance</label>
-  			<p class="muted">
-  				$ --
-  			</p>
-  			<hr>
-  			<label class="" for="n-a">Total Monthly Payment</label>
-  			<p class="muted">
-  				$ --
-  			</p>
+        <div class="calculator-results--items-wrapper">
+          <label class="calculator-results--label" for="n-a">Principle & Interest</label>
+          <span class="calculator-results--items-wrapper--amount">
+            $ --
+          </span>
+        </div>
+        <div class="calculator-results--items-wrapper">
+          <label class="calculator-results--label" for="n-a">Tax</label>
+          <span class="calculator-results--items-wrapper--amount">
+            $ --
+          </span>
+        </div>
+        <div class="calculator-results--items-wrapper">
+          <label class="calculator-results--label" for="n-a">Insurance</label>
+          <span class="calculator-results--items-wrapper--amount">
+            $ --
+          </span>
+        </div>
+        <div class="calculator-results--items-wrapper calculator-results--total">
+    			<label class="calculator-results--label" for="n-a">Total Monthly Payment</label>
+    			<span class="calculator-results--items-wrapper--amount">
+    				$ --
+    			</span>
+        </div>
   		</div>
     </div>
     <script src="js/main.js"></script>

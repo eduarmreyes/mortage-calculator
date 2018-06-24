@@ -45,12 +45,14 @@
 	calculator.addEventListener('submit', function(e) {
 		e.preventDefault();
 		if (!validate_form()) {
-			console.log('form is not valid');
+			console.log('form is not valid, stop submission');
 			return false;
 		}
 
 		// calculate results
 		console.log('calculating results');
+		var calculator_results = document.getElementById('calculator-results');
+		calculator_results.classList.add('results--show')
 	});
 
 	var validate_form = function() {
