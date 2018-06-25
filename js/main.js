@@ -116,6 +116,11 @@
 		this.setTextByElement(calculator_results_total, this.Total);
 	};
 
+	Calculator.prototype.changeBtnText = function(text) {
+		var calculator_btn = document.getElementById('calculator--button');
+		calculator_btn.textContent = text;
+	};
+
 	Calculator.prototype.setTextByElement = function(element, amount) {
 		element.innerText = this.formatter.format(amount);
 	};
@@ -154,6 +159,8 @@
 		calculator_results.addClassName('results--show');
 		calculator_results.addClassName('animated');
 		calculator_results.addClassName('slideInDown');
+
+		calculator_results.changeBtnText('recalculate');
 		// https://caniuse.com/#search=scroll-behavior
 		// this one only works on Chrome v.65+, Firefox v.59+ and Chrome 4 Android v.67
 		// Safari is a no-no as well as IE, Edge, iOS Safari
@@ -172,7 +179,7 @@
 	var years_of_mortage_text = document.getElementById('years-of-mortage--text');
 
 	years_of_mortage_text.addEventListener('input', function(e) {
-		if (parseFloat(this.value, 10) < 0 || parseFloat(this.value, 10) > 41) {return false; e.preventDefault();}
+		// todo: add validation
 		var range_input = document.getElementById('years-of-mortage');
 		range_input.value = this.value;
 	})
