@@ -124,7 +124,6 @@
 		return parseFloat(document.getElementById(id).value, 10);
 	};
 
-	// todo: create class Calculator to calculate the mortage result
 	var calculator = document.getElementById('calculator');
 
 	calculator.addEventListener('submit', function(e) {
@@ -161,6 +160,28 @@
 		// in a real-case scenario I would use a polyfill found in
 		// https://github.com/iamdustan/smoothscroll
 		window.scrollBy({ top: 50, left: 0, behavior: 'smooth' });
+	});
+
+	var range_years_of_mortage = document.getElementById('years-of-mortage');
+
+	range_years_of_mortage.addEventListener('input', function(e) {
+		var text_input = document.getElementById('years-of-mortage--text');
+		text_input.value = this.value;
+	});
+
+	var years_of_mortage_text = document.getElementById('years-of-mortage--text');
+
+	years_of_mortage_text.addEventListener('input', function(e) {
+		if (parseFloat(this.value, 10) < 0 || parseFloat(this.value, 10) > 41) {return false; e.preventDefault();}
+		var range_input = document.getElementById('years-of-mortage');
+		range_input.value = this.value;
+	})
+
+	var range_rate_of_interest = document.getElementById('rate-of-interest');
+
+	range_rate_of_interest.addEventListener('input', function(e) {
+		var text_input = document.getElementById('rate-of-interest--text');
+		text_input.value = this.value;
 	});
 
 	var validate_form = function() {
