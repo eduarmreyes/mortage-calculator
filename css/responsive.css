@@ -1,0 +1,81 @@
+@media screen and (min-width: 768px) {
+	.calculator-wrapper {
+		margin: 0 auto;
+		width: 688px;
+		display: flex;
+	}
+	.calculator--form {
+		padding: 35px 40px;
+		width: 470px;
+	}
+	.calculator--title {
+		font-size: 16px;
+	}
+	.mortage-separator {
+		margin-bottom: 35px;
+	}
+	.form--label {
+		font-size: 14px;
+	}
+	.form--input {
+		margin-top: 5px;
+		height: 45px;
+		padding-left: 40px;
+		width: calc(100% - 42px);
+	}
+	.form--input__range-number {
+		text-align: center;
+		padding: 0;
+		width: 60px;
+	}
+	.form--label-with-dollar-sign::after {
+		font-size: 16px;
+		top: 43px;
+		left: 25px;
+	}
+	.form--input--error--message {
+		font-size: 12px;
+	}
+	.results {
+		margin: 55px 0 55px -55px;
+		padding: 35px 0 0 90px;
+		width: 298px;
+	}
+	.results--title {
+		font-size: 22px;
+	}
+	.calculator-results--items-wrapper {
+		flex-direction: column;
+		border-bottom: none;
+	}
+	.calculator-results--total {
+		border-top: 1px solid #cbcbcb;
+	}
+	.calculator-results--label {
+		font-size: 14px;
+		width: 100%;
+	}
+	.calculator-results--items-wrapper--amount {
+		font-size: 18px;
+		line-height: 1.67;
+	}
+	.calculator-results--items-wrapper--amount.total {
+		font-size: 22px;
+	}
+	.calculator-results--total__label {
+		font-size: 18px;
+	}
+	.results {
+		display: block;
+	}
+	.animated {
+		-webkit-animation-duration: 0s;
+		animation-duration: 0s;
+		-webkit-animation-fill-mode: unset;
+		animation-fill-mode: unset;
+	}
+	.slideInDown {
+		-webkit-animation-name: unset;
+		animation-name: unset;
+	}
+}
