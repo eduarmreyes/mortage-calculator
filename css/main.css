@@ -195,6 +195,12 @@ html {
 	margin-top: 1px;
 }
 
+.w-1rem {
+	width: 1rem;
+}
+.W-50 {
+	width: 50%;
+}
 .w-100 {
 	width: 100%;
 }
