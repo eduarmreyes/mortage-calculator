@@ -166,7 +166,11 @@
 		// Safari is a no-no as well as IE, Edge, iOS Safari
 		// in a real-case scenario I would use a polyfill found in
 		// https://github.com/iamdustan/smoothscroll
-		window.scrollBy({ top: 50, left: 0, behavior: 'smooth' });
+		window.scroll({
+		  top: 2500, 
+		  left: 0, 
+		  behavior: 'smooth' 
+		});
 	});
 
 	var range_years_of_mortage = document.getElementById('years-of-mortage');
