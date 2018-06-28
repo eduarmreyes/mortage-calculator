@@ -90,6 +90,8 @@
 
 	Calculator.prototype.calculatePrincipleAndInterest = function(principleAndInterestsID) {
 		var calculator_results_principle_and_interest = document.getElementById(principleAndInterestsID);
+		// ((interestRate / 100) / 12) * loanAmount / (1-Math.pow((1 + ((interestRate / 100)/12)),-yearsOfMortgage*12))
+		debugger;
 		this.principleAndInterests = ((this.interestRate / 100) / 12) * this.loanAmount / (1-Math.pow((1 + ((this.interestRate / 100)/12)), - this.yearsOfMortgage*12));
 
 		this.setTextByElement(calculator_results_principle_and_interest, this.principleAndInterests);
