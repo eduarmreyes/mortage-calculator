@@ -1,5 +1,8 @@
 (function() {
+
+	// Create a new class called Input
 	function Input(id) {
+		// in the constructor, set the properties this class needs
 		this.id = id;
 		this.inputErrorClass = 'form--input--error';
 		this.errorMessage = 'Mandatory field';
@@ -31,10 +34,12 @@
 		empty_tag.classList.add(this.errorMessageClass);
 		empty_tag.classList.add('animated');
 		empty_tag.classList.add('shake');
-		// add text to created element
+		// add text to the created element
 		var empty_message = document.createTextNode(this.errorMessage);
+		// append text message to the tag just created
 		empty_tag.appendChild(empty_message);
 
+		// add error classes to the input
 		var the_input = document.getElementById(this.id);
 		the_input.classList.add(this.inputErrorClass);
 		the_input.classList.add('animated');
@@ -44,7 +49,11 @@
 	};
 	// End Input
 
+	// Calculator class begins
 	function Calculator(calculator_results_id) {
+		// set all the properties the class needs
+		// including a formatter to be used in different parts
+		// of the class itself
 		this.id = calculator_results_id;
 		this.calculator_element = document.getElementById(this.id);
 
@@ -64,30 +73,37 @@
 		this.Insurance = 0;
 	}
 
+	// fn to add class to the class list of an element
 	Calculator.prototype.addClassName = function(className) {
 		this.calculator_element.classList.add(className);
 	};
 
+	// set the interest to the class
 	Calculator.prototype.setInterest = function(interestRateID) {
 		this.interestRate = this.parseIt(interestRateID);
 	};
 
+	// set the years of mortage to the class
 	Calculator.prototype.setYearsOfMortgage = function(yearsOfMortgageID) {
 		this.yearsOfMortgage = this.parseIt(yearsOfMortgageID);
 	};
 
+	// set loan amount to the class
 	Calculator.prototype.setLoanAmount = function(loanAmountID) {
 		this.loanAmount = this.parseIt(loanAmountID);
 	};
 
+	// set annual tax to the class
 	Calculator.prototype.setAnnualTax = function(annualTaxID) {
 		this.annualTax = this.parseIt(annualTaxID);
 	};
 
+	// set annual insurance to the class
 	Calculator.prototype.setAnnualInsurance = function(annualInsuranceID) {
 		this.annualInsurance = this.parseIt(annualInsuranceID);
 	};
 
+	// calculate the principle and interest of the class
 	Calculator.prototype.calculatePrincipleAndInterest = function(principleAndInterestsID) {
 		var calculator_results_principle_and_interest = document.getElementById(principleAndInterestsID);
 
@@ -96,6 +112,7 @@
 		this.setTextByElement(calculator_results_principle_and_interest, this.principleAndInterests);
 	};
 
+	// calculate the tax
 	Calculator.prototype.calculateTax = function(taxID) {
 		var calculator_results_tax = document.getElementById(taxID);
 		this.Tax = this.annualTax / 12;
@@ -103,6 +120,7 @@
 		this.setTextByElement(calculator_results_tax, this.Tax);
 	};
 
+	// calculate the insurance
 	Calculator.prototype.calculateInsurance = function(insuranceID) {
 		var calculator_results_insurance = document.getElementById(insuranceID);
 		this.Insurance = this.annualInsurance / 12;
@@ -110,6 +128,7 @@
 		this.setTextByElement(calculator_results_insurance, this.Insurance);
 	};
 
+	// sum all previous properties to calculate the total
 	Calculator.prototype.calculateTotal = function(totalID) {
 		var calculator_results_total = document.getElementById(totalID);
 		this.Total = this.principleAndInterests + this.Tax + this.Insurance;
@@ -117,25 +136,31 @@
 		this.setTextByElement(calculator_results_total, this.Total);
 	};
 
+	// to change the text of the button to show recalculate
 	Calculator.prototype.changeBtnText = function(text) {
 		var calculator_btn = document.getElementById('calculator--button');
 		calculator_btn.textContent = text;
 	};
 
+	// set text formatted by element and amount
 	Calculator.prototype.setTextByElement = function(element, amount) {
 		element.innerText = this.formatter.format(amount);
 	};
 
+	// retuns a parsedFloat amount
 	Calculator.prototype.parseIt = function(id) {
+		// the last value, 10, is by default
+		// but it's a good practice to use it regardless of that
 		return parseFloat(document.getElementById(id).value, 10);
 	};
 
+	// get form
 	var calculator = document.getElementById('calculator');
 
+	// on submit
 	calculator.addEventListener('submit', function(e) {
 		e.preventDefault();
 		if (!validate_form()) {
-			console.log('form is not valid, stop submission');
 			return false;
 		}
 
@@ -184,16 +209,22 @@
 	var years_of_mortage_text = document.getElementById('years-of-mortage--text');
 
 	years_of_mortage_text.addEventListener('input', function(e) {
-		// todo: add validation
 		var range_input = document.getElementById('years-of-mortage');
 		range_input.value = this.value;
-	})
+	});
 
 	var range_rate_of_interest = document.getElementById('rate-of-interest');
 
 	range_rate_of_interest.addEventListener('input', function(e) {
 		var text_input = document.getElementById('rate-of-interest--text');
 		text_input.value = this.value;
+	});
+
+	var years_of_mortage_text = document.getElementById('rate-of-interest--text');
+
+	years_of_mortage_text.addEventListener('input', function(e) {
+		var range_input = document.getElementById('rate-of-interest');
+		range_input.value = this.value;
 	});
 
 	var validate_form = function() {
