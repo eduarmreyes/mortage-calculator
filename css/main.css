@@ -2,13 +2,16 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
+/*
+ * 
+ * mobile first, meaning all the following css is meant to be rendered
+ * by mobile devices and all the media queries will target tablet or
+ * larger devices
+ * 
+*/
+
 html {
 	font-family: 'Lato', sans-serif;
-}
-
-/* Generals */
-.m-top-none {
-	margin-top: 0;
 }
 
 .mortage-title {
@@ -18,9 +21,11 @@ html {
 	color: #006ea0;
 	margin: 10px 0;
 }
+
 .mortage-title--wrapper {
 	padding-left: 15px;
 }
+
 .mortage-separator {
 	border: none;
 	height: 2px;
@@ -32,6 +37,7 @@ html {
 .calculator-wrapper {
 	margin: 0 15px 50px;	
 }
+
 .calculator--form {
 	box-shadow: 0 2px 6px 2px rgba(0, 0, 0, 0.1);
 	padding: 20px 15px;
@@ -39,6 +45,7 @@ html {
 	z-index: 10;
 	background-color: #fff;
 }
+
 .calculator--title {
 	font-size: 12px;
 	line-height: 1.67;
@@ -48,6 +55,7 @@ html {
 	font-weight: 400;
 	margin: 0;
 }
+
 .calculator-results--items-wrapper {
 	display: flex;
 	justify-content: space-between;
@@ -55,14 +63,17 @@ html {
 	margin-bottom: 2px;
 	border-bottom: 1px solid #b2b2b2;
 }
+
 .calculator-results--items-wrapper--amount{
 	color: #3e3d3f;
 	font-size: 14px;
 	font-weight: 700;
 }
+
 .calculator-results--items-wrapper--amount.total {
 	font-size: 18px;
 }
+
 .calculator-results--label {
 	width: 104px;
 	height: 16px;
@@ -70,9 +81,14 @@ html {
 	font-size: 12px;
 	font-weight: 400;
 }
+
 .calculator-results--total {
 	border-bottom: none;
 }
+
+/*
+ * form style
+*/
 
 .form--btn {
 	padding: 12px 0;
@@ -87,9 +103,11 @@ html {
 	text-transform: uppercase;
 	font-weight: 700;
 }
+
 .form--btn:active {
 	background-color: #00578D;
 }
+
 .form--input {
 	display: block;
 	width: calc(100% - 20px);
@@ -101,6 +119,7 @@ html {
 	border-radius: .25rem;
 	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
 .form--input:focus {
   color: #495057;
   background-color: #fff;
@@ -109,17 +128,21 @@ html {
   box-shadow: 0 0 4px rgba(62, 61, 63, 0.62);
   border-radius: 4px;
 }
+
 .form--range {
 	display: block;
-	width: 100%;
+	width: 80%;
 }
+
 .form--label {
 	font-weight: 700;
 	font-size: 12px;
 }
+
 .form--label-with-dollar-sign {
 	position: relative;
 }
+
 .form--label-with-dollar-sign::after {
 	content: '$';
 	position: absolute;
@@ -129,64 +152,64 @@ html {
 	font-weight: 400;
 	z-index: 10;
 }
+
 .form--p-right {
 	padding-right: 10px;
 }
+
 .form--p-left {
 	padding-left: 10px;
 }
+
 .form--wrapper {
 	margin-bottom: 20px;
-}
-
-.results {
-	padding: 20px 15px;
-	background-color: #eaf6fa;
-	display: none;
-	transition: all 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
-}
-.results--show {
-	display: block;
-}
-.results--title {
-	color: #3e3d3f;
-	font-size: 20px;
-	line-height: 30px;
-}
-
-.d-flex {
-	display: flex;
-}
-.justify-content-center {
-	justify-content: center;
-}
-.justify-content-between {
-	justify-content: space-between;
-}
-.align-items-center {
-	align-items: center;
 }
 
 .form--input--error {
 	border-color: #da3535;
 }
+
 .form--input--error:focus {
 	border-color: #da3535;
 	box-shadow: 0 0 4px rgba(218, 53, 53, 0.62);
 }
+
 .form--input--error--message {
 	margin: 2px 0;
 	font-size: 10px;
 	color: #da3535;
 	font-weight: 700;
 }
-.form--range {
-	width: 80%;
+
+/*
+ * results
+*/
+.results {
+	padding: 20px 15px;
+	background-color: #eaf6fa;
+	display: none;
+	transition: all 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+}
+
+.results--show {
+	display: block;
+}
+
+.results--title {
+	color: #3e3d3f;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+/* utils */
+.m-top-none {
+	margin-top: 0;
 }
 
 .p-left-4px {
 	padding-left: 4px;
 }
+
 .p-right-10px {
 	padding-right: 10px;
 }
@@ -198,12 +221,31 @@ html {
 .w-1rem {
 	width: 1rem;
 }
+
 .w-50 {
 	width: 50%;
 }
+
 .w-100 {
 	width: 100%;
 }
+
 .w-26px {
 	width: 26px;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.justify-content-center {
+	justify-content: center;
+}
+
+.justify-content-between {
+	justify-content: space-between;
+}
+
+.align-items-center {
+	align-items: center;
 }
