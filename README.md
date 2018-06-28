@@ -1,17 +1,17 @@
 # Formula:
-#Principle & Interest:
+# Principle & Interest:
 ```
 ((interestRate / 100) / 12) * loanAmount / (1-Math.pow((1 + ((interestRate / 100)/12)),-yearsOfMortgage*12))
 ```
-#Tax:
+# Tax:
 ```
 annualTax / 12
 ```
-#Insurance:
+# Insurance:
 ```
 annualInsurance / 12
 ```
-#Monthly payment:
+# Monthly payment:
 ```
 principleAndInterests + Tax + Insurance
 ```
