@@ -13,11 +13,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/range.css">
-    <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/responsive.css">
   </head>
   <body>
     <!--[if lt IE 7]>
@@ -41,7 +37,7 @@
                 <span class="w-1rem">40</span>
               </div>
               <div>
-                <input type="number" name="years-of-mortage--text" id="years-of-mortage--text" value="21" class="p-left-4px w-26px form--input form--input__range-number">
+                <input type="number" name="years-of-mortage--text" id="years-of-mortage--text" value="21" class="p-left-4px w-26px form--input form--input__range-number" disabled>
               </div>
             </div>
           </div>
@@ -54,14 +50,13 @@
                 <span class="w-1rem">10</span>
               </div>
               <div>
-                <input type="number" name="rate-of-interest--text" id="rate-of-interest--text" value="5.1" class="p-left-4px w-26px form--input form--input__range-number" step="0.1">
+                <input type="number" name="rate-of-interest--text" id="rate-of-interest--text" value="5.1" class="p-left-4px w-26px form--input form--input__range-number" step="0.1" disabled=>
               </div>
             </div>
           </div>
           <div class="form--wrapper">
       			<label class="form--label form--label-with-dollar-sign" for="loan-amount">Loan amount</label>
       			<input type="number" id="loan-amount" name="loan-amount" id="loan-amount" class="form--input f-width">
-            <!-- <p class="form--input--error--message"></p> -->
           </div>
           <div class="d-flex align-items-center form--wrapper">
             <div class="form--p-right w-50">
